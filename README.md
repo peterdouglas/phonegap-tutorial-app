@@ -1,4 +1,3 @@
-phonegap-tutorial-app
-=====================
+# PhoneGap Workshop Tutorial  #
 
-Phonegap tutorial app from http://coenraets.org/blog/phonegap-tutorial/
+This phonegap app is based on the tutorial at http://coenraets.org/blog/phonegap-tutorial/.
