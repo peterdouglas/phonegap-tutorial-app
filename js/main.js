@@ -1,20 +1,17 @@
 var app = {
 
     findByName: function() {
-        console.log('findByName');
+        var self = this;
         this.store.findByName($('.search-key').val(), function(employees) {
-            var l = employees.length;
-            var e;
-            $('.employee-list').empty();
-            for (var i=0; i<l; i++) {
-                e = employees[i];
-                $('.employee-list').append('<li><a href="#employees/' + e.id + '">' + e.firstName + ' ' + e.lastName + '</a></li>');
-            }
+	        $('.employee-list').html(self.employeeLiTp1(employees));
+	        
         });
-    },
+        },
 
     initialize: function() {
     var self = this;
+    	this.homeTp1 = Handlebars.compile($("#home-tp1").html());
+    	this.employeeLiTp1 = Handlebars.compile($("#employee-li-tp1").html());
         this.store = new MemoryStore(function() {
 	        self.renderHomeView();
         });
@@ -30,13 +27,8 @@ var app = {
     },
     
     renderHomeView: function() {
-	    var html = "<div class='header'><h1>Home</h1></div>" +
-	    			"<div class='search-view'>" +
-	    			"<input class='search-key' />" +
-	    			"<ul class='employee-list'></ul>" +
-	    			"</div>";
-	    $('body').html(html);
-	    $('.search-key').on('keyup', $.proxy(this.findByName, this));
+	   $('body').html(this.homeTp1());
+	   $('.search-key').on('keyup', $.proxy(this.findByName, this));
     },
 
 };
