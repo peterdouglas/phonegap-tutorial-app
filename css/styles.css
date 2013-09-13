@@ -13,6 +13,16 @@ body {
     position: relative;
 }
 
+.scroll {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	position: absolute;
+	top: 84px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
 .header {
     background: #666;
     -webkit-background-size: 1px 44px;
@@ -136,6 +146,11 @@ li>a {
     -ms-background-size: 10px 100%;
     -o-background-size: 10px 100%;
     background-size: 10px 100%;
+}
+
+li>a.tappable-active {
+	color: #fff;
+	background-color: #4286f5;
 }
 
 li>a * {
