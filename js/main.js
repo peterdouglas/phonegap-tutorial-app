@@ -4,12 +4,11 @@ var app = {
 
     initialize: function() {
     var self = this;
-    	this.homeTp1 = Handlebars.compile($("#home-tp1").html());
-    	this.employeeLiTp1 = Handlebars.compile($("#employee-li-tp1").html());
+    	this.registerEvents();
         this.store = new MemoryStore(function() {
 	        self.route();
         });
-        this.detailsURL = /^#exployees\/(\d{1,})/;
+        this.detailsURL = /^#employees\/(\d{1,})/;
       
     },
     
