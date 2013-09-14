@@ -13,9 +13,9 @@ var HomeView = function(store) {
 	                });
         },
         
-	  this.renderHomeView: function() {
-	   $('body').html(this.homeTp1());
-	   $('.search-key').on('keyup', $.proxy(this.findByName, this));
+	  this.render: function() {
+	   this.el.html(HomeView.template());
+	  return this;
     },
     
 	this.initialize();	
